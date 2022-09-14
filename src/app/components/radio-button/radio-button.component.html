@@ -1,0 +1,16 @@
+<div [formGroup]="parentForm" class="form">
+  <div *ngFor="let option of options; let i = index" class="inputGroup">
+    <input
+      [formControlName]="itemControlName"
+      [id]="option.id"
+      [name]="itemControlName"
+      type="radio"
+      [value]="option.label"
+      (change)="onItemSelected(option.id)"
+      required
+    >
+    <label [for]=" option.id ">{{ option.label }} </label>
+  </div>
+</div>
+
+

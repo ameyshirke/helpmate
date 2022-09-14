@@ -1,0 +1,90 @@
+@import "../../../variables.scss";
+
+.form {
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  opacity: 1;
+}
+
+.inputGroup {
+  background-color: #fff;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 12px;
+
+  label {
+    padding: 12px 35px 12px 18px;
+    display: block;
+    text-align: left;
+    color: #1b1e22;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(211, 209, 216, 0.351);
+
+    &:before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      content: "";
+      background-color: #fff;
+      box-shadow: 0 0 30px rgba(211, 209, 216, 0.351);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    &:after {
+      width: 32px;
+      height: 32px;
+      content: "";
+      background-image: url(/assets/svg/tick-circle.svg);
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 200ms ease-in;
+      opacity: 0.2;
+    }
+  }
+
+  input:checked ~ label {
+    color: #000;
+
+    &:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 0.2;
+    }
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+  }
+}
