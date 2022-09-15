@@ -1,0 +1,49 @@
+:host{
+  ::ng-deep{
+    z-index: 1000000;
+    background-color: var(--navbar-scroll);
+    color: var(--navbar-scroll-text);
+    -webkit-box-shadow: var(--navbar-scroll-shadow);
+    box-shadow: var(--navbar-scroll-shadow);
+
+    .navbar{
+      padding: 0.3rem 1rem ;
+      height: 80px;
+    }
+    .navbar-brand {
+      padding-top: 0;
+    }
+
+    .navbar-brand:focus{
+      outline: none;
+    }
+
+
+    p{
+      color: var(--navbar-scroll-text);
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      font-family: 'DM Sans' !important;
+      margin-bottom: 0;
+      padding-top: 0.2rem !important;
+    }
+    .dropdown-toggle::after {
+      display: none;
+    }
+  }
+}
+
+a{
+  color: var(--navbar-scroll-text);
+}
+
+.prf-img{
+  height: 34px;
+  width: 34px;
+}
+.container {
+  margin-top: 5px;
+  max-width: 100%;
+}
+

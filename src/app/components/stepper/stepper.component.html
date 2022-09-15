@@ -8,7 +8,6 @@
         <app-radio-button [options]="workflowItems[0].options" (itemSelected)="onSessionTypeSelected($event,stepper)"
                           [parentForm]="firstFormGroup" itemControlName="firstCtrl"></app-radio-button>
       </div>
-
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" label="Fill out your address">

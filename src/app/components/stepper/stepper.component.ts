@@ -28,7 +28,7 @@ export class StepperComponent implements OnInit {
   }
 
   readonly workflowItems: SessionInfo[] = [
-    new SessionInfo('Some text', [
+    new SessionInfo('Some Question', [
       new Option(1, 'Option 1'),
       new Option(2, 'Option 2'),
     ])

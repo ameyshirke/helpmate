@@ -1,0 +1,26 @@
+.header-bg {
+  background-image: url(/assets/img/home-bg-2.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(90%);
+  -webkit-filter: brightness(90%);
+  -moz-filter: brightness(90%);
+  -o-filter: brightness(90%);
+  width: 100%;
+  height: 800px;
+}
+.header {
+  padding-bottom: 0;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+}
+.header-overlay {
+  position: absolute;
+  margin-top: 140px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr 1fr;
+  row-gap: 1.5rem;
+}
