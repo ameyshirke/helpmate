@@ -2,5 +2,62 @@
 @import "src/assets/base.scss";
 @include mat.core();
 
+@import "variables.scss";
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+img {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+button {
+  border-style: none;
+  cursor: pointer;
+  outline: none !important;
+}
+
+.btn{
+  border-style: none;
+}
+
+.primary-btn {
+  height: 50px;
+  background: $theme-primary-color;
+  border-radius: $default-border-radius;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.secondary-btn {
+  height: 50px;
+  background: #FFFFFF;
+  border-radius: $default-border-radius;
+  border: 2px solid var(--jumph-ui-bg-10);
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.button-border {
+  filter: none !important;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.primary-btn:hover, .secondary-btn:hover, .tertiary-btn:hover, .small-btn:hover, .secondary-small-btn:hover {
+  box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  opacity: 0.9;
+}

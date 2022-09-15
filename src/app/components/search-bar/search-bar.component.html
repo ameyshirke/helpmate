@@ -1,0 +1,10 @@
+<form class="search">
+  <div class="search-input" [ngClass]="{'s-padding': isSearchPage}">
+      <input type="text" class="search-style s-input" [(ngModel)]="keyword"
+             name="activity" placeholder="Search for resources">
+  </div>
+  <div class="search-btn">
+    <button type="button" class="primary-btn">Search</button>
+  </div>
+</form>
+

@@ -1,5 +1,5 @@
 .header-bg {
-  background-image: url(/assets/img/home-bg-2.webp);
+  background-image: url(/assets/img/home-bg-22.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
 }
 .header {
   padding-bottom: 0;
-  height: 650px;
+  height: 850px;
   display: flex;
   justify-content: center;
 }
@@ -23,4 +23,53 @@
   display: grid;
   grid-template-rows: min-content min-content 1fr 1fr;
   row-gap: 1.5rem;
+}
+
+.dash-msg{
+  justify-self: center;
+}
+.overlay-text {
+  text-align: center;
+}
+
+.text-1 {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 115.2%;
+  color: #FFFFFF;
+  margin-bottom: 2vw;
+}
+.text-2 {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 31px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.search-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.title-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+
+  .title-row {
+    width: 600px;
+    display: flex;
+    align-items: center;
+
+    div {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 23px;
+      text-align: center;
+      color: #000000;
+    }
+  }
 }
