@@ -1,35 +1,60 @@
 <mat-stepper [linear]="true" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Stepper Test</ng-template>
+  <div *ngFor="let scenario of session?.scenarios">
+    <mat-step [stepControl]="senarioFormGroup">
+      <mat-stepper [linear]="true" #stepper>
+        <mat-step [stepControl]="mediaFormGroup">
+          <form [formGroup]="mediaFormGroup">
+            <div class="msg">
+              <span class="sp1">{{ scenario.desc }}</span>
+            </div>
 
-      <div class="ques-card">
-        <span class="ques">{{workflowItems[0].question}}</span>
-        <app-radio-button [options]="workflowItems[0].options" (itemSelected)="onSessionTypeSelected($event,stepper)"
-                          [parentForm]="firstFormGroup" itemControlName="firstCtrl"></app-radio-button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-    <form [formGroup]="secondFormGroup">
-      <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
-      </mat-form-field>
+            <div
+              *ngIf="scenario?.media?.type == 'video'"
+              class="swiper-slide swiper-img"
+            >
+              <video controls [src]="scenario?.media?.url"></video>
+            </div>
+
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="transcriptFormGroup">
+          <form [formGroup]="transcriptFormGroup">
+            <div class="msg">
+              <span class="sp1">{{ scenario.media.transcript }}</span>
+            </div>
+
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="queFormGroup">
+          <form [formGroup]="queFormGroup">
+            <div *ngFor="let que of scenario.questionList" class="ques-card">
+              <span class="ques">{{ que.desc }}</span>
+              <app-radio-button
+                [answers]="que.answers"
+                (itemSelected)="onSessionTypeSelected($event, stepper)"
+                [parentForm]="queFormGroup"
+                itemControlName="queCtrl"
+              ></app-radio-button>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-stepper>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext>Next Scenario</button>
       </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
+    </mat-step>
+  </div>
 </mat-stepper>
-

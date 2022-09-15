@@ -1,15 +1,15 @@
 <div [formGroup]="parentForm" class="form">
-  <div *ngFor="let option of options; let i = index" class="inputGroup">
+  <div *ngFor="let answer of answers; let i = index" class="inputGroup">
     <input
       [formControlName]="itemControlName"
-      [id]="option.id"
+      [id]="answer.id"
       [name]="itemControlName"
       type="radio"
-      [value]="option.label"
-      (change)="onItemSelected(option.id)"
+      [value]="answer.answer"
+      (change)="onItemSelected(answer.id)"
       required
     >
-    <label [for]=" option.id ">{{ option.label }} </label>
+    <label [for]=" answer.id ">{{ answer.answer }} </label>
   </div>
 </div>
 

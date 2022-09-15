@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {MatStepper} from "@angular/material/stepper";
 import {Option, SessionInfo} from "./session-utils";
+import {HelpmateService} from "../../service/helpmate.service"
+import { Session, Scenario, Media, Question, QuestionFeature, Answer } from '../../model/all.model'
 
 @Component({
   selector: 'app-stepper',
@@ -10,27 +12,37 @@ import {Option, SessionInfo} from "./session-utils";
 })
 export class StepperComponent implements OnInit {
 
+  constructor(private _formBuilder: FormBuilder, private helpmateService : HelpmateService) {}
+
+  session : Session;
+
   ngOnInit(): void {
+    this.helpmateService.getSessionFlow().then((value) => {
+      console.log("********************* "+value.scenarios[0].questionList[0].answers.length);
+      this.session = value;
+    });
   }
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+  mediaFormGroup = this._formBuilder.group({
+    //mediaCtrl: ['', Validators.required],
   });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+  transcriptFormGroup = this._formBuilder.group({
+    //transcriptCtrl: ['', Validators.required],
   });
+  queFormGroup = this._formBuilder.group({
+    queCtrl: ['', Validators.required],
+  });
+
+  senarioFormGroup = this._formBuilder.group({
+    queCtrl: ['', Validators.required],
+  });
+
   isLinear = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+
 
   onSessionTypeSelected($event: number, stepper: MatStepper) {
 
   }
 
-  readonly workflowItems: SessionInfo[] = [
-    new SessionInfo('Some Question', [
-      new Option(1, 'Option 1'),
-      new Option(2, 'Option 2'),
-    ])
-  ];
 }
