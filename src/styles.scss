@@ -1,7 +1,6 @@
 @use '~@angular/material' as mat;
 @import "src/assets/base.scss";
 @include mat.core();
-@import "~material-bottom-nav";
 
 @import "variables.scss";
 
@@ -50,6 +49,7 @@ button {
   width: 100%;
   text-align: center;
 }
+
 
 .button-border {
   filter: none !important;

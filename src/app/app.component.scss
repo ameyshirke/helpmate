@@ -1,4 +1,9 @@
 
+.content {
+  margin-bottom: 56px;
+  height: 100%;
+}
+
 app-nav-bar{
   position: fixed;
   width: 100%;
@@ -12,9 +17,4 @@ app-nav-bar{
 //    display: none;
 //  }
 //}
-//
-//@media only screen and (max-width: 755px) {
-//  app-nav-bar{
-//    display: none;
-//  }
-//}
+

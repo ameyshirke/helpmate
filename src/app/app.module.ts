@@ -32,8 +32,7 @@ import {StepperModule} from "./components/stepper/stepper.module";
     }),
     TimelineModule,
     DashboardModule,
-    StepperModule
-    // BottomNavModule
+    StepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
