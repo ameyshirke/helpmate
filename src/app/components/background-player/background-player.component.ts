@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Howl, Howler} from 'howler';
 
 @Component({
   selector: 'app-background-player',
@@ -13,15 +14,9 @@ export class BackgroundPlayerComponent implements OnInit {
   }
 
   ngOnInit() {
-console.log("loaded")
+    console.log("loaded")
     this.sourceFile = "../assets/audio/sample.mp3";
-    // this.play();
-    //
-    // var audio:any = document.createElement("AUDIO")
-    // document.body.appendChild(audio);
-    // audio.src = "./assets/audio/sample.mp3"
   }
-
 
 
 }

@@ -30,3 +30,12 @@ bottom-nav{
   }
 }
 
+@media only screen and (min-width: 995px) {
+  .bottom-nav{
+    visibility: hidden;
+  }
+  app-banner-msg{
+    display: none;
+  }
+}
+
