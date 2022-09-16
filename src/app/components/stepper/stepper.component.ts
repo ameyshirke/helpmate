@@ -16,15 +16,17 @@ export class StepperComponent implements OnInit {
   options: Options = {
     showTicksValues: true,
     stepsArray: [
-      { value: 1, legend: "Poor" },
-      { value: 2 },
-      { value: 3, legend: "Fair" },
-      { value: 4 },
-      { value: 5, legend: "Average" },
-      { value: 6 },
-      { value: 7, legend: "Good" },
-      { value: 8 },
-      { value: 9, legend: "Excellent" }
+      { value: 0, legend: "Not vivid" },
+      { value: 10 },
+      { value: 20 },
+      { value: 30 },
+      { value: 40 },
+      { value: 50},
+      { value: 60},
+      { value: 70 },
+      { value: 80  },
+      { value: 90  },
+      {value: 100 ,legend: "Extremely vivid"}
     ]
   };
 
