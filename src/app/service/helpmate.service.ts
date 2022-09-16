@@ -62,7 +62,6 @@ export class HelpmateService extends BaseService {
            scenarios.push(scenario1);
            scenarios.push(scenario1);
 
-
            session.scenarios = scenarios;
 
            resolve(session);
