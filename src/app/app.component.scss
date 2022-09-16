@@ -1,20 +1,32 @@
+@use '~material-bottom-nav' as bottom-nav;
+@import "../variables.scss";
+
+.bottom-nav {
+  @include bottom-nav.root(
+    $background-color: #FFFFFF,
+    $active-color: #ffcc00,
+    $inactive-color: #E0E0E0
+  );
+
+  height: 100px;
+  box-shadow: 0px -4px 20px rgba(63, 76, 95, 0.12);
+  border-radius: 20px 20px 0 0;
+}
 
 .content {
-  margin-bottom: 56px;
+  margin-bottom: 65px;
   height: 100%;
 }
 
-app-nav-bar{
+bottom-nav{
   position: fixed;
   width: 100%;
+  height: 65px;
 }
 
-//@media only screen and (min-width: 755px) {
-//  app-bottom-nav{
-//    visibility: hidden;
-//  }
-//  app-banner-msg{
-//    display: none;
-//  }
-//}
+@media only screen and (max-width: 700px) {
+  bottom-nav{
+    visibility: hidden;
+  }
+}
 

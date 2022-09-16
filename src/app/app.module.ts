@@ -12,6 +12,10 @@ import {environment} from '../environments/environment';
 import {TimelineModule} from "./components/timeline/timeline.module";
 import {DashboardModule} from "./components/dashboard/dashboard.module";
 import {StepperModule} from "./components/stepper/stepper.module";
+import {HttpClientModule, HttpClient} from "@angular/common/http";
+import {BackgroundPlayerComponent} from "./components/background-player/background-player.component";
+import {BackgroundPlayerModule} from "./components/background-player/background-player.module";
+import {Howl} from "howler";
 
 @NgModule({
   declarations: [
@@ -33,8 +37,10 @@ import {StepperModule} from "./components/stepper/stepper.module";
     TimelineModule,
     DashboardModule,
     StepperModule,
+    HttpClientModule,
+    BackgroundPlayerModule,
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {

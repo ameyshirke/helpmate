@@ -1,5 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { BaseService } from './base.service';
+import {HttpClient} from "@angular/common/http";
 import { Session, Scenario, Media, Question, QuestionFeature, Answer } from '../model/all.model'
 
 @Injectable({
@@ -7,7 +8,7 @@ import { Session, Scenario, Media, Question, QuestionFeature, Answer } from '../
 })
 export class HelpmateService extends BaseService {
 
-  constructor(injector: Injector) {
+  constructor(private http: HttpClient, injector: Injector) {
     super(injector);
   }
 
@@ -61,8 +62,16 @@ export class HelpmateService extends BaseService {
            scenarios.push(scenario1);
 
            session.scenarios = scenarios;
-
+       this.getWeatherByCity();
            resolve(session);
         });
+  }
+
+  getWeatherByCity<String>()  {
+    this.http.get("https://api.openweathermap.org/data/2.5/weather?q=London&appid=42a252ecf2e8b308fff99afb052da891")
+      .toPromise().then((value) => {
+        console.log("+++++++++++++++++ "+JSON.stringify(value));
+        return JSON.stringify(value);
+    });
   }
 }

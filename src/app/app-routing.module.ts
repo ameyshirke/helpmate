@@ -5,7 +5,7 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'sessions', component: StepperComponent },
   { path: 'home', component: DashboardComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
