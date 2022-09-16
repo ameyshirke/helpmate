@@ -1,3 +1,9 @@
+<div class="h1 session-header">
+  Your Sessions
+</div>
+<div class="h3 sub-text">
+  Session 1
+</div>
 <mat-stepper [linear]="true" orientation="vertical" #stepper>
   <div *ngFor="let scenario of session?.scenarios; let i = index">
     <mat-step [stepControl]="senarioFormGroup">

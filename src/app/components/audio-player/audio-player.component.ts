@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AudioPlayerComponent implements OnInit {
 
   @Input() audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
-  @Input() title = "Scenario 1";
+  @Input() title = "Helpmate - Scenario 1";
   @Input() coverImage = "https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg";
   audioList: any[] = undefined;
 
