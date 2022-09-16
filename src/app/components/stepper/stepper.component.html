@@ -1,60 +1,71 @@
-<mat-stepper [linear]="true" #stepper>
-  <div *ngFor="let scenario of session?.scenarios">
+<mat-stepper [linear]="true" orientation="vertical" #stepper>
+  <div *ngFor="let scenario of session?.scenarios; let i = index">
     <mat-step [stepControl]="senarioFormGroup">
+      <ng-template matStepLabel>Scenario {{i+1}}</ng-template>
+
       <mat-stepper [linear]="true" #stepper>
         <mat-step [stepControl]="mediaFormGroup">
+          <ng-template matStepLabel>Audio clip</ng-template>
           <form [formGroup]="mediaFormGroup">
             <div class="msg">
               <span class="sp1">{{ scenario.desc }}</span>
             </div>
-
-            <div
-              *ngIf="scenario?.media?.type == 'video'"
-              class="swiper-slide swiper-img"
-            >
-              <video controls [src]="scenario?.media?.url"></video>
+            <div class="audio-div">
+              <app-audio-player></app-audio-player>
             </div>
-
             <div>
-              <button mat-button matStepperNext>Next</button>
+              <button class="stepper-btn" mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
 
         <mat-step [stepControl]="transcriptFormGroup">
+          <ng-template matStepLabel>Scenario question</ng-template>
           <form [formGroup]="transcriptFormGroup">
             <div class="msg">
               <span class="sp1">{{ scenario.media.transcript }}</span>
+              <div *ngFor="let que of scenario.questionList" class="ques-card">
+                <span class="ques">{{ que.desc }}</span>
+                <app-radio-button
+                  [answers]="que.answers"
+                  (itemSelected)="onSessionTypeSelected($event, stepper)"
+                  [parentForm]="queFormGroup"
+                  itemControlName="queCtrl">
+                </app-radio-button>
+              </div>
             </div>
 
+
             <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+              <button class="stepper-btn" mat-button matStepperPrevious>Back</button>
+              <button class="stepper-btn" mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
 
         <mat-step [stepControl]="queFormGroup">
+          <ng-template matStepLabel>Emotions</ng-template>
           <form [formGroup]="queFormGroup">
-            <div *ngFor="let que of scenario.questionList" class="ques-card">
-              <span class="ques">{{ que.desc }}</span>
-              <app-radio-button
-                [answers]="que.answers"
-                (itemSelected)="onSessionTypeSelected($event, stepper)"
-                [parentForm]="queFormGroup"
-                itemControlName="queCtrl"
-              ></app-radio-button>
+            <span class="slider-ques">How did you think you performed?</span>
+            <div class="slider">
+              <ngx-slider formControlName="slider" [ngModel]="value" [(value)]="value" [options]="options"></ngx-slider>
             </div>
+
             <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+              <button class="stepper-btn" mat-button matStepperPrevious>Back</button>
+              <button class="stepper-btn" mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
+        <ng-template matStepperIcon="edit">
+          <mat-icon>
+          </mat-icon>
+        </ng-template>
       </mat-stepper>
       <div>
-        <button mat-button matStepperNext>Next Scenario</button>
+        <button class="stepper-btn-disabled" mat-button matStepperNext>Next Scenario</button>
       </div>
     </mat-step>
   </div>
 </mat-stepper>
+

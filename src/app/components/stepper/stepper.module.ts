@@ -7,6 +7,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {RadioButtonModule} from "../radio-button/radio-button.module";
+import {AudioPlayerModule} from "../audio-player/audio-player.module";
+import {MatIconModule} from "@angular/material/icon";
+import {NgxSliderModule} from "@angular-slider/ngx-slider";
 
 
 
@@ -21,7 +24,10 @@ import {RadioButtonModule} from "../radio-button/radio-button.module";
         MatFormFieldModule,
         MatButtonModule,
         MatInputModule,
-        RadioButtonModule
+        RadioButtonModule,
+        AudioPlayerModule,
+        MatIconModule,
+        NgxSliderModule
     ],
   exports: [
     StepperComponent

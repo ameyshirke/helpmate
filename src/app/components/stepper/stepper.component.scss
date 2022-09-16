@@ -1,3 +1,50 @@
+@import "../../../variables.scss";
+
+
+:host{
+  ::ng-deep{
+    .mat-step-header .mat-step-icon-selected,
+    .mat-step-header .mat-step-icon-state-done,
+    .mat-step-header .mat-step-icon-state-edit {
+      background: $theme-primary-color;
+      text-decoration: line-through;
+    }
+    .mat-horizontal-content-container{
+      overflow: unset;
+    }
+    .choices__list--single .choices__item {
+      color: black;
+    }
+    .mat-vertical-content {
+      padding: 0 12px 12px 12px;
+    }
+
+    .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
+      background-color: #FFFFFF;
+    }
+
+    .ngx-slider .ngx-slider-bubble:before {
+      content: "$ ";
+    }
+
+    .ngx-slider .ngx-slider-pointer{
+      background: $theme-primary-color;
+      outline: none;
+    }
+
+    google-map .map-container {
+      margin-top: 20px;
+      width: 100% !important;
+      height: 300px !important;
+    }
+
+    .mat-step-text-label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+
 .ques-card {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -6,4 +53,55 @@
 .ques{
   font-size: 20px;
   margin-bottom: 15px;
+}
+
+.audio-div{
+  display: flex;
+  align-items: center;
+  margin: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepper-btn{
+  border-style: none;
+  background: $theme-primary-color !important;
+  border-radius: $default-border-radius;
+  height: 42px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+  padding: 5px 40px;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.stepper-btn-disabled{
+  border-style: none;
+  background: grey !important;
+  border-radius: $default-border-radius;
+  height: 42px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+  padding: 5px 40px;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.slider{
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.slider-ques{
+  margin: 10px;
 }
